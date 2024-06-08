@@ -2,12 +2,29 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/**/*.js",
+        "src": "api/alunos.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/tutores.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/materias.js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
-      { "src": "/api/(.*)", "dest": "/api/$1" }
+      { "src": "/api/alunos", "dest": "/api/alunos.js" },
+      { "src": "/api/alunos/login", "dest": "/api/alunos.js" },
+      { "src": "/api/alunos/cadastro", "dest": "/api/alunos.js" },
+      { "src": "/api/alunos/:id", "dest": "/api/alunos.js" },
+      { "src": "/api/tutores", "dest": "/api/tutores.js" },
+      { "src": "/api/tutores/login", "dest": "/api/tutores.js" },
+      { "src": "/api/tutores/cadastro", "dest": "/api/tutores.js" },
+      { "src": "/api/tutores/:id", "dest": "/api/tutores.js" },
+      { "src": "/api/materias", "dest": "/api/materias.js" },
+      { "src": "/api/materias/:id", "dest": "/api/materias.js" }
     ]
   }
   
