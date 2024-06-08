@@ -1,15 +1,15 @@
 {
     "version": 2,
     "headers": [
-        {
-          "source": "/api/(.*)",
-          "headers": [
-            { "key": "Access-Control-Allow-Credentials", "value": "true" },
-            { "key": "Access-Control-Allow-Origin", "value": "*" },
-            { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
-            { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
-          ]
-        }
+      {
+        "source": "/api/(.*)",
+        "headers": [
+          { "key": "Access-Control-Allow-Credentials", "value": "true" },
+          { "key": "Access-Control-Allow-Origin", "value": "*" },
+          { "key": "Access-Control-Allow-Methods", "value": "GET,OPTIONS,PATCH,DELETE,POST,PUT" },
+          { "key": "Access-Control-Allow-Headers", "value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version" }
+        ]
+      }
     ],
     "builds": [
       {
@@ -25,17 +25,17 @@
         "use": "@vercel/node"
       }
     ],
-    "routes": [
-      { "src": "/api/alunos", "dest": "/api/alunos.js"},
-      { "src": "/api/alunos/login", "dest": "/api/alunos.js"},
-      { "src": "/api/alunos/cadastro", "dest": "/api/alunos.js"},
-      { "src": "/api/alunos/:id", "dest": "/api/alunos.js"},
-      { "src": "/api/tutores", "dest": "/api/tutores.js"},
-      { "src": "/api/tutores/login", "dest": "/api/tutores.js"},
-      { "src": "/api/tutores/cadastro", "dest": "/api/tutores.js"},
-      { "src": "/api/tutores/:id", "dest": "/api/tutores.js"},
-      { "src": "/api/materias", "dest": "/api/materias.js"},
-      { "src": "/api/materias/:id", "dest": "/api/materias.js"}
+    "rewrites": [
+      { "source": "/api/alunos", "destination": "/api/alunos.js" },
+      { "source": "/api/alunos/login", "destination": "/api/alunos.js" },
+      { "source": "/api/alunos/cadastro", "destination": "/api/alunos.js" },
+      { "source": "/api/alunos/:id", "destination": "/api/alunos.js" },
+      { "source": "/api/tutores", "destination": "/api/tutores.js" },
+      { "source": "/api/tutores/login", "destination": "/api/tutores.js" },
+      { "source": "/api/tutores/cadastro", "destination": "/api/tutores.js" },
+      { "source": "/api/tutores/:id", "destination": "/api/tutores.js" },
+      { "source": "/api/materias", "destination": "/api/materias.js" },
+      { "source": "/api/materias/:id", "destination": "/api/materias.js" }
     ]
   }
   
